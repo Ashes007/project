@@ -1,0 +1,4 @@
+[17-Oct-2017 21:41:19 Etc/GMT] PHP Parse error:  syntax error, unexpected '<' in /home/sparskcd/public_html/techspecs/application/controllers/Product.php on line 173
+[17-Oct-2017 21:42:34 Etc/GMT] PHP Parse error:  syntax error, unexpected '<' in /home/sparskcd/public_html/techspecs/application/controllers/Product.php on line 173
+[17-Oct-2017 21:42:36 Etc/GMT] PHP Parse error:  syntax error, unexpected '<' in /home/sparskcd/public_html/techspecs/application/controllers/Product.php on line 173
+[18-Oct-2017 20:45:05 Etc/GMT] PHP Parse error:  syntax error, unexpected 'no_product' (T_STRING), expecting ',' or ';' in /home/sparskcd/public_html/techspecs/application/views/product.php on line 135

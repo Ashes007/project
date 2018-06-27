@@ -1,0 +1,8 @@
+[21-Sep-2017 19:28:22 Etc/GMT] PHP Parse error:  syntax error, unexpected '.', expecting ',' or ';' in /home/sparskcd/public_html/techspecs/admin-app/controllers/Category.php on line 5
+[21-Sep-2017 19:31:12 Etc/GMT] PHP Parse error:  syntax error, unexpected '.', expecting ',' or ';' in /home/sparskcd/public_html/techspecs/admin-app/controllers/Category.php on line 5
+[21-Sep-2017 19:31:14 Etc/GMT] PHP Parse error:  syntax error, unexpected '.', expecting ',' or ';' in /home/sparskcd/public_html/techspecs/admin-app/controllers/Category.php on line 5
+[21-Sep-2017 19:33:45 Etc/GMT] PHP Parse error:  syntax error, unexpected '.', expecting ',' or ';' in /home/sparskcd/public_html/techspecs/admin-app/controllers/Category.php on line 5
+[21-Sep-2017 19:36:00 Etc/GMT] PHP Parse error:  syntax error, unexpected '.', expecting ',' or ';' in /home/sparskcd/public_html/techspecs/admin-app/controllers/Product.php on line 5
+[21-Sep-2017 19:39:49 Etc/GMT] PHP Parse error:  syntax error, unexpected '.', expecting ',' or ';' in /home/sparskcd/public_html/techspecs/admin-app/controllers/Category.php on line 5
+[25-Sep-2017 18:50:04 Etc/GMT] PHP Fatal error:  Call to undefined method Model_basic::getAttributeName() in /home/sparskcd/public_html/techspecs/admin-app/views/attribute/list.php on line 56
+[15-Oct-2017 20:52:57 Etc/GMT] PHP Parse error:  syntax error, unexpected '"' "' (T_CONSTANT_ENCAPSED_STRING) in /home/sparskcd/public_html/techspecs/admin-app/controllers/Category.php on line 71
