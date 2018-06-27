@@ -1,0 +1,156 @@
+<section class="product_heading">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="product_heading_inner">
+					<span><?php echo stripslashes($product_info['product_name']);?></span>
+					<div class="product_heading_rt">
+						<div class="pro_pic">
+							<img src="<?php echo $this->Model_basic->getProductImage($product_info['id']);?>" alt="" />
+						</div>
+						<div class="pro_pic_txt">
+							<h5>Product Code</h5>
+							<a href="#" data-toggle="modal" data-target="#myModal3"><?php echo stripslashes($product_info['product_code']);?> <img src="<?php echo FRONT_IMAGE_PATH;?>plus3.png" alt="" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade pro_details" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="product_descrption">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="<?php echo FRONT_IMAGE_PATH;?>close_btn.png" alt="" /></button>
+						<div class="product_descrption_box">
+							<div class="product_descrption_rt">
+								<!-- Tab panes -->
+								  <div class="tab-content">
+								  <?php
+								  if(is_array($product_images))
+								  {
+								  	foreach ($product_images as $key => $imageInfo) { 	
+								  	$image = FRONT_IMAGE_PATH."no_image.jpg";	
+								  	if(file_exists(FILE_UPLOAD_ABSOLUTE_PATH."product/".$imageInfo['image_name']))
+										{
+											$image = FILE_UPLOAD_URL."product/".$imageInfo['image_name'];
+										}
+								  ?>
+								    <div role="tabpanel" class="tab-pane fade in <?php if($key == 0) {?> active <?php }?>" id="img<?php echo $imageInfo['id'];?>">
+								    	<img src="<?php echo $image;?>" alt="" />
+								    </div>
+								  <?php 
+									}}
+								  ?>  
+								  </div>
+							</div>
+							<div class="product_descrption_left">
+								 <!-- Nav tabs -->
+								  <ul class="nav nav-tabs" role="tablist">
+								  <?php
+								  if(is_array($product_images))
+								  {
+								  	foreach ($product_images as $key => $imageInfo) { 	
+								  	$image = FRONT_IMAGE_PATH."no_image.jpg";	
+								  	if(file_exists(FILE_UPLOAD_ABSOLUTE_PATH."product/thumb/".$imageInfo['image_name']))
+										{
+											$image = FILE_UPLOAD_URL."product/thumb/".$imageInfo['image_name'];
+										}
+								  ?>
+								    <li role="presentation" <?php if($key == 0) {?> class="active" <?php }?>>
+								    	<a href="#img<?php echo $imageInfo['id'];?>" aria-controls="img<?php echo $imageInfo['id'];?>" role="tab" data-toggle="tab">
+								    		<img src="<?php echo $image;?>" alt="" />
+								    	</a>
+								    </li>
+								  <?php 
+									}}
+								  ?>
+								  </ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="product_category_part info_sec">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-8">
+				<div class="product_info_left">
+					<?php 						
+						if(count($productArr)){
+							foreach ($productArr as $key => $product) {	
+							$mainAttrName = $this->Model_basic->getAttributeName($key)						
+						?>
+					<?php if (strpos(strtolower($mainAttrName), 'color') !== false){ ?>
+					<div class="product_info_left_box">
+						<div class="row">
+							<div class="col-sm-6">
+								<h5>Color</h5>
+							</div>
+							<div class="col-sm-6">
+							<?php foreach($product as $prod){?>
+								<div class="color_box">
+									<div style=" background-color: <?php echo stripslashes($prod['attribute_value']);?>; width: 20px; height:20px; border-radius: 20px;float: left;"></div> <p style="float: left; padding-left: 5px;"><?php echo stripslashes($prod['attribute_value']);?></p>
+								</div>
+							<?php  }?>
+								
+							</div>
+						</div>
+					</div>
+					<?php } else {?>
+
+
+					<h4><?php echo $mainAttrName;?></h4>
+					<?php foreach($product as $prod){?>
+					<div class="product_info_left_box">					
+						<div class="row">
+							<div class="col-sm-6">
+								<h5><?php echo stripslashes($prod['attribute_name']);?></h5>
+							</div>
+							<div class="col-sm-6">
+								<p><?php echo stripslashes($prod['attribute_value']);?> <?php echo stripslashes($prod['attribute_details']);?></p>
+							</div>
+						</div>
+					
+					</div>
+						<?php }?>
+						<?php }?>
+
+					<?php }}?>
+					
+				</div>
+			</div>	
+			<div class="col-md-3 col-sm-4">
+				<div class="product_info_rt">
+					<div class="product_info_rt_box">
+						<ul>
+						<?php
+							if(count($productArr)){
+							foreach ($productArr as $key => $product) {
+								
+						?>
+							<li><a href="#"><?php echo $this->Model_basic->getAttributeName($key);?></a></li>
+						<?php }}?>	
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="social_icon">
+		<ul class="social_box" id="hide">
+			<li><a href="#"><img src="<?php echo FRONT_IMAGE_PATH;?>sos_new1.png" alt="" /></a></li>
+			<li><a href="#"><img src="<?php echo FRONT_IMAGE_PATH;?>sos_new2.png" alt="" /></a></li>
+			<li><a href="#"><img src="<?php echo FRONT_IMAGE_PATH;?>sos_new3.png" alt="" /></a></li>
+		</ul>
+		<div class="open_sos" id="open">
+			<img src="<?php echo FRONT_IMAGE_PATH;?>open_sos.png" alt="" class="btn1"/>
+			<img src="<?php echo FRONT_IMAGE_PATH;?>close_sos.png" alt="" class="btn2"/>
+		</div>
+	</div>
+</section>
